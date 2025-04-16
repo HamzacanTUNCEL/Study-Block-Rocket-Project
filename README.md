@@ -1,14 +1,20 @@
-# Hamzacan's Racket Web Server
+# Hamzacan's Simple PDF Search App
 
-This is a basic web server application written in [Racket](https://racket-lang.org/), using the built-in `web-server` module.
+This is a minimal web application built using the Racket web server.  
+It serves a basic HTML page with a Google Search form that automatically filters results to PDF files.
 
-## Features
+## 🧠 Features
 
-- Listens for HTTP requests on port `8090`
-- Returns a simple HTML page with useful information
-- Includes a link to the official Racket documentation
+- Written in [Racket](https://racket-lang.org/)
+- Serves a single static page on `localhost:8090`
+- Includes a text box and a button
+- Automatically appends `+ext:pdf` to your search query before submitting to Google
 
-## Requirements
+## 🚀 How It Works
 
-- Racket installed on your system
-- Run from a terminal or any Racket-supported environment
+When a user enters a search term and presses the "Search PDFs" button:
+- A tiny JavaScript function modifies the input
+- It adds `+ext:pdf` to the query
+- The form is submitted to `https://www.google.com/search`
+
+Racket does not handle the request further — it's just used to serve the static HTML page.
